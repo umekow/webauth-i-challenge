@@ -10,7 +10,7 @@ const requireAuth = require('../auth/require-auth-middleware');
 router.get('/', requireAuth, (req, res) => {
     Users.find()
     .then(users => {
-        res.json(users); 
+        res.status(200).json(users); 
     })
     .catch(error => res.send(error))
 })
